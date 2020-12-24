@@ -7,6 +7,8 @@ do
   rm -f "$subdir"/*.m3u
   for filename in "$subdir"/*.mp4;
   do
-    echo "$(basename $1)/${subdir##*/}/${filename##*/}" >> /"$subdir"/"${subdir##*/}.m3u"
+    #echo "$(basename $1)/${subdir##*/}/${filename##*/}" >> /"$subdir"/"${subdir##*/}.m3u"
+    echo "${filename##*/}" >> /"$subdir"/"${subdir##*/}.m3u"
+    echo "$(basename $1)/${subdir##*/}/${filename##*/}" >>  "$1/${subdir##*/}.m3u" 
   done
-done 
+done
